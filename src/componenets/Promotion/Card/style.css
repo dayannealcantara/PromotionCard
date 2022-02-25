@@ -1,0 +1,45 @@
+.promotionCard{
+  align-items: center;
+  border: 1px solid #c3c3c3;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.20);  
+  display: flex;
+  padding: 15px;
+}
+.promotionCard-img{
+  max-width: 100px;
+  margin-right: 20px;
+}
+.promotionCard-info{
+
+}
+.promotionCard-title{
+  font-size: 16px;
+  color:#2c3e50;
+}
+.promotionCard-price{
+  font-size: 26px;
+  font-weight: 700;
+  color:#3498db;
+}
+.promotionCard-coment{
+  font-weight: 700;
+  color:#95a5a6;
+}
+.promotionCard-footer{
+  display: flex;
+  align-items: center;
+}
+.promotionCard-comments{
+  color:#3498db;
+  margin-left: auto;
+  margin-right: 20px;
+}
+.promotionCard-link{
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  color:#3498db;
+  padding: 8px;
+  text-decoration: none;
+  margin-left: 10px;
+}
