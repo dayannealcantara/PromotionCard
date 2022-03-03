@@ -1,13 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import PromotionForm from "componenets/Promotion/Form";
+import UIContainer from "componenets/UI/Container";
 
 const PagesPromotionForm = () => {
   const { id } = useParams();
   return (
-    <div>
-      Form
-      {id && <div>id: {id}</div> }
-    </div>
+    <UIContainer>
+      <PromotionForm />
+    </UIContainer>
   )
 }
 

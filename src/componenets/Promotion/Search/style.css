@@ -1,0 +1,20 @@
+.promotion-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.promotion-header h1{
+text-transform: uppercase;
+color: #8888;
+}
+.promotion-input{
+  display: flex;
+  height: 42px;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  font-size: 16px;
+}
