@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 import './style.css';
 import axios from "axios";
@@ -13,6 +13,16 @@ const initialValue = {
 const PromotionForm = ({ id }) => {
   const [values, setValues] = useState(initialValue);
   const history = useHistory();
+  
+
+  useEffect(() =>{
+    if(id) {
+      axios.get(`http://localhost:5000/promotions/${id}`)
+      .then((response) =>{
+      setValues(response.data)
+      })
+    }
+  },[]);
   
   function onChange(e) {
     const { name, value } = e.target;
@@ -35,19 +45,24 @@ const PromotionForm = ({ id }) => {
     <form onSubmit={onSubmit}>
       <div className="promotion-form">
         <label htmlFor="title">Título</label>
-        <input name="title" id="title" type="text" onChange={onChange}/>
+        <input name="title" id="title" type="text" onChange={onChange} 
+        value={values.title}/>
       </div>
       <div className="promotion-form">
         <label htmlFor="url">Link</label>
-        <input name="url" id="url" type="text" onChange={onChange}/>
+        <input name="url" id="url" type="text" onChange={onChange}
+        value={values.url}/>
       </div>
       <div className="promotion-form">
         <label htmlFor="imageUrl">Imagem(URL)</label>
-        <input name="imageUrl" id="imageUrl" type="text" onChange={onChange}/>
+        <input name="imageUrl" id="imageUrl" type="text" onChange={onChange}
+        value={values.imageUrl}/>
       </div>
       <div className="promotion-form">
         <label htmlFor="price">Preço</label>
-        <input className="price" name="price" id="price" type="number" onChange={onChange}/>
+        <input className="price" name="price" id="price" type="number" onChange={onChange}
+        value={values.price}
+        />
       </div>
       <div>
         <button type="submit">Salvar</button>
