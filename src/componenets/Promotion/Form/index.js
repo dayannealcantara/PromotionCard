@@ -10,7 +10,7 @@ const initialValue = {
   price:0,
 }
 
-const PromotionForm = () => {
+const PromotionForm = ({ id }) => {
   const [values, setValues] = useState(initialValue);
   const history = useHistory();
   

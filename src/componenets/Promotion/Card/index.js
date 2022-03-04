@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css'
+import { Link } from "react-router-dom";
 
 const PromotionCard = ({promotion}) => {
   return (
@@ -12,9 +13,10 @@ const PromotionCard = ({promotion}) => {
           {promotion.comments.length > 0 && (
             <div className="promotionCard-coment">"{promotion.comments[0].comment}"</div>            
           )}
-          <div className="promotionCard-comments">{promotion.comments.length}{''}{promotion.comments > 1 ? 'Comentários' : 'Comentário'}        
+          <div className="promotionCard-comments">{promotion.comments.length}{''}{promotion.comments > 1 ? 'Comentários' : 'Comentário'} 
+          </div>       
             <a className="promotionCard-link" href={promotion.url} target="_blank" rel="noopener noreferrer" >IR PARA O SITE</a>
-          </div>
+            <Link to={`/edit/${promotion.id}`}>Editar</Link>
         </footer>
       </div>
     </div>
