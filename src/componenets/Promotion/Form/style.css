@@ -1,0 +1,38 @@
+.promotion-form {
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 15px;
+}
+
+.promotion-form  label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+.promotion-form  input {
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  height: 36px;
+  padding: 0 20px;  
+}
+
+.price{
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  height: 36px;
+  width: 100px;
+  padding: 0 20px;  
+}
+
+button {
+  border: 1px solid #0bdb0b;
+  background-color: #fff;
+  color: #0bdb0b;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
