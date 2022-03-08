@@ -1,28 +1,42 @@
 import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 import './style.css';
-import axios from "axios";
+import useApi from "componenets/Utils";
 
 const initialValue = {
   title: '',
   url:'',
-  imagemUrl:'',
+  imageUrl:'',
   price:0,
 }
 
 const PromotionForm = ({ id }) => {
   const [values, setValues] = useState(id ? null: initialValue);
   const history = useHistory();
+  const [load] = useApi({
+    url: `/promotions/${id}`,
+    method: 'get',
+    onCompleted: (response) => {
+      setValues(response.data);
+    }
+  });
+
+  const [save, saveInfo] = useApi({
+    url: id ? `/promotions/${id}` : 'promotions',
+    method: id ? 'put' : 'post',
+    onCompleted : (response) =>{
+      if (!response.error) {
+        history.push('/');
+      }
+    }
+  })
   
 
   useEffect(() =>{
-    if(id) {
-      axios.get(`http://localhost:5000/promotions/${id}`)
-      .then((response) =>{
-      setValues(response.data)
-      })
+    if (id) {
+     load()
     }
-  },[]);
+  },[id]);
   
   function onChange(e) {
     const { name, value } = e.target;
@@ -30,23 +44,20 @@ const PromotionForm = ({ id }) => {
   }
 
   function onSubmit(e) {
-    e.preventDefault();
-
-    const method = id ? 'put' : 'post';
-    const url = id
-    ? `http://localhost:5000/promotions/${id}`
-    : `http://localhost:5000/promotions`
-
-    axios[method](url, values)
-    .then((response) => {
-      history.push('/');
-    });
+    e.preventDefault(); 
+    save({
+      data: values,
+    })
   }
     
   return (
     <div>
     <h1>Promo show</h1>
     <h2>Nova Promoção</h2>
+    {!values
+    ? (
+      <div>Carregando...</div>
+    ) : (
     <form onSubmit={onSubmit}>
       <div className="promotion-form">
         <label htmlFor="title">Título</label>
@@ -73,6 +84,7 @@ const PromotionForm = ({ id }) => {
         <button type="submit">Salvar</button>
       </div>
     </form>
+    )}
     </div>
   )
 
