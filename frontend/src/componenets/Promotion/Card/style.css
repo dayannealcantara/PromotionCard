@@ -6,13 +6,16 @@
   display: flex;
   padding: 15px;
 }
+
+.promotionCard-info{
+  flex-grow: 1;
+
+}
 .promotionCard-img{
   max-width: 100px;
   margin-right: 20px;
 }
-.promotionCard-info{
 
-}
 .promotionCard-title{
   font-size: 16px;
   color:#2c3e50;
@@ -25,6 +28,10 @@
 .promotionCard-coment{
   font-weight: 700;
   color:#95a5a6;
+  max-width: 345px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .promotionCard-footer{
   display: flex;
@@ -34,8 +41,22 @@
   color:#3498db;
   margin-left: auto;
   margin-right: 20px;
+  background-color: unset;
+  border: unset;
+ 
+  
 }
 .promotionCard-link{
+  border: 1px solid #3498db;
+  border-radius: 5px;
+  color:#3498db;
+  padding: 8px;
+  text-decoration: none;
+  margin-left: 10px;
+  white-space: nowrap;
+}
+
+.promotionCard-editarButton{
   border: 1px solid #3498db;
   border-radius: 5px;
   color:#3498db;
