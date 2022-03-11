@@ -1,0 +1,22 @@
+.modalComments{
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+.modalCommentsItem{
+  display: flex;
+}
+
+.modalCommentsImg{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.modalCommentsNome{
+  font-weight: 600;
+}
+
+.modalCommentsComentario{
+  margin-top: 5px;
+}

@@ -1,0 +1,18 @@
+.promotionModalForm{
+  margin-top: 40px;
+}
+
+.promotionModalForm textarea {
+  border-radius: 10px;
+  border: 2px solid #636060aa;
+  width: 100%;
+  
+}
+.promotionModalButton{
+  border: 2px solid #0b20db;
+  background-color: #fff;
+  color: #000;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+}
