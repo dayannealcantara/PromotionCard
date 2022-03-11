@@ -28,8 +28,7 @@
 .promotionCard-coment{
   font-weight: 700;
   color:#95a5a6;
-  max-width: 345px;
-  white-space: nowrap;
+  max-width: 345px; 
   text-overflow: ellipsis;
   overflow: hidden;
 }
@@ -43,9 +42,9 @@
   margin-right: 20px;
   background-color: unset;
   border: unset;
- 
-  
+   white-space: nowrap;
 }
+
 .promotionCard-link{
   border: 1px solid #3498db;
   border-radius: 5px;
