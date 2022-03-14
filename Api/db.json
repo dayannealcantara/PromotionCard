@@ -73,6 +73,40 @@
       "promotionId": 3,
       "comment": "Testando",
       "id": 6
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "teste",
+      "parentId": 3,
+      "id": 7
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "",
+      "parentId": 3,
+      "id": 8
+    },
+    {
+      "userId": 1,
+      "promotionId": 3,
+      "comment": "",
+      "parentId": 7,
+      "id": 9
+    },
+    {
+      "userId": 1,
+      "promotionId": 5,
+      "comment": "produto de qualidade",
+      "id": 10
+    },
+    {
+      "userId": 1,
+      "promotionId": 5,
+      "comment": "muito bom",
+      "parentId": 10,
+      "id": 11
     }
   ],
   "users": [
