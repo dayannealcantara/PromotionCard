@@ -19,4 +19,31 @@
 
 .modalCommentsComentario{
   margin-top: 5px;
+  margin-bottom: 0;
+}
+.modalCommentsResponder{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: 0;
+  color: #191338;
+  text-transform:capitalize;
+}
+
+.modalCommentsComentarioBox{
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.modalCommentsComentarioButton{
+  margin-left: 15px;
+  background-color: transparent;
+  height: 35px;
+  border-radius: 5px;
+  border: 1px solid #3498db;
+  color: #191338;
+  padding: 10px;
 }
