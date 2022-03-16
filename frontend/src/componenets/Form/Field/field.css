@@ -1,0 +1,22 @@
+.formFieldLabel {
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.formFieldInput{
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  background-color: #fff;
+  height: 36px;
+  padding: 0 20px;  
+}
+
+.formFieldInputError {
+  border-color: #c0392b;
+}
+.formFieldError {
+  color: #c0392b;
+  font-size: 14px;
+}
