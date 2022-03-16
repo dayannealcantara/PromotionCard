@@ -1,7 +1,11 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import { useHistory } from "react-router-dom";
 import './style.css';
 import useApi from "componenets/Utils";
+import Field from "componenets/Form/Field";
+import { Formik, Form } from "formik";
+import schema from "./Schema";
+
 
 const initialValue = {
   title: '',
@@ -11,14 +15,10 @@ const initialValue = {
 }
 
 const PromotionForm = ({ id }) => {
-  const [values, setValues] = useState(id ? null: initialValue);
   const history = useHistory();
-  const [load] = useApi({
+  const [load, loadInfo] = useApi({
     url: `/promotions/${id}`,
     method: 'get',
-    onCompleted: (response) => {
-      setValues(response.data);
-    }
   });
 
   const [save, saveInfo] = useApi({
@@ -39,18 +39,14 @@ const PromotionForm = ({ id }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   },[id]);
   
-  function onChange(e) {
-    const { name, value } = e.target;
-    setValues({...values, [name]: value })    
+  function onSubmit(formValues) {
+   save({
+     data: formValues,
+   }) 
   }
 
-  function onSubmit(e) {
-    e.preventDefault(); 
-    save({
-      data: values,
-    })
-  }
-    
+  const values = id ? loadInfo.data : initialValue;
+   
   return (
     <div>
     <h1>Promo show</h1>
@@ -59,32 +55,30 @@ const PromotionForm = ({ id }) => {
     ? (
       <div>Carregando...</div>
     ) : (
-    <form onSubmit={onSubmit}>
+    <Formik 
+    initialValues={initialValue}
+    onSubmit={onSubmit}
+    validationSchema={schema}
+    render={() => ( 
+    <Form>
+      {saveInfo.loading && <span>Salvando dados ...</span>}
       <div className="promotion-form">
-        <label htmlFor="title">Título</label>
-        <input name="title" id="title" type="text" onChange={onChange} 
-        value={values.title}/>
+       <Field name="title" label="Título" type="text" />
       </div>
-      <div className="promotion-form">
-        <label htmlFor="url">Link</label>
-        <input name="url" id="url" type="text" onChange={onChange}
-        value={values.url}/>
+      <div className="promotion-form">       
+        <Field name="url" label="Link" type="text" />
       </div>
-      <div className="promotion-form">
-        <label htmlFor="imageUrl">Imagem(URL)</label>
-        <input name="imageUrl" id="imageUrl" type="text" onChange={onChange}
-        value={values.imageUrl}/>
+      <div className="promotion-form">       
+        <Field name="imageUrl" label="Imagem (URL)" type="text" />
       </div>
-      <div className="promotion-form">
-        <label htmlFor="price">Preço</label>
-        <input className="price" name="price" id="price" type="number" onChange={onChange}
-        value={values.price}
-        />
+      <div className="promotion-form">      
+        <Field className="price" name="price" label="Preço" type="number" />
       </div>
       <div>
         <button type="submit">Salvar</button>
       </div>
-    </form>
+    </Form>
+    )}/>
     )}
     </div>
   )
