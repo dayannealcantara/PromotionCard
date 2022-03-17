@@ -1,0 +1,18 @@
+.uiButton{
+  border: 1px solid #e27789;
+  border-radius: 5px;
+  color:#e27789;
+  padding: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: unset;
+}
+.uiButton--bordeBlue{
+  color:#e27789;
+  border: 2px solid currentColor;
+}
+.uiButton--containedColor{
+  color: #000;
+  background-color: #e27789;
+  border: 2px solid #e9546d;
+}
