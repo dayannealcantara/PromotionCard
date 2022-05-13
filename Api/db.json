@@ -37,25 +37,11 @@
       "id": 5
     },
     {
-      "title": "Fone de Ouvido JBL, Conexão 3.5mm, Vermelho - JBLJR310RED",
-      "url": "https://www.kabum.com.br/produto/147830/fone-de-ouvido-jbl-conexao-3-5mm-vermelho-jbljr310red",
-      "imageUrl": "https://images.kabum.com.br/produtos/fotos/147830/fone-de-ouvido-jbl-conexao-3-5mm-vermelho-jbl-jr310-red_1614804939_gg.jpg",
-      "price": 120,
-      "id": 6
-    },
-    {
       "title": "Headphone JBL Tune 510BT - Azul",
       "url": "https://www.casasbahia.com.br/headphone-jbl-tune-510bt-azul-55024205/p/55024205?utm_medium=Cpc&utm_source=GP_PLA&IdSku=55024205&idLojista=10037&tipoLojista=1P&utm_campaign=apostas_smart-shopping_1p&gclid=CjwKCAjwlcaRBhBYEiwAK341jWSV7Gd5knQGaVLA3Hta8Ky6YOPX9zGbTqmxdfI-OQgC3CaFcaTimBoCWssQAvD_BwE",
       "imageUrl": "https://www.casasbahia-imagens.com.br/Control/ArquivoExibir.aspx?IdArquivo=1766755510",
       "price": 189,
       "id": 7
-    },
-    {
-      "title": "Fonte Carregador P/Notebook Lenovo Ideapad 320-80yh0006br",
-      "url": "https://www.amazon.com.br/gp/product/B08PPR1BMP/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1",
-      "imageUrl": "https://m.media-amazon.com/images/I/51B8pLCefjL._AC_SL1000_.jpg",
-      "price": 95,
-      "id": 8
     }
   ],
   "comments": [
@@ -128,6 +114,12 @@
       "comment": "muito bom",
       "parentId": 10,
       "id": 11
+    },
+    {
+      "userId": 1,
+      "promotionId": 7,
+      "comment": "ff",
+      "id": 12
     }
   ],
   "users": [
